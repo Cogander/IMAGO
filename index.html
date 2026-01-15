@@ -1,130 +1,354 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>IMAGO Creative Group</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-    }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 30px;
-      text-align: center;
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 15px;
-    }
-    section {
-      padding: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-    .divisi {
-      font-size: 12px;
-      color: #666;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px;
-      width: 100%;
-      background: #000;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #333;
-    }
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imago Creative Group</title>
+
+<style>
+:root{
+  --primary:#00e0ff;
+  --dark:#0a0a0a;
+  --soft:#f5f7fa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter','Segoe UI',Arial,sans-serif;
+  background:#fff;
+  color:#1a1a1a;
+  line-height:1.8;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+.navbox{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#fff;
+}
+.navbox strong{font-size:18px}
+.navbox button{
+  padding:10px 22px;
+  border-radius:50px;
+  border:none;
+  background:var(--primary);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 20px 60px;
+  text-align:center;
+  color:#fff;
+}
+.hero img{width:150px;margin-bottom:30px}
+.hero h1{
+  font-size:64px;
+  line-height:1.2;
+  margin-bottom:25px;
+}
+.hero h1 span{color:var(--primary)}
+.hero p{
+  font-size:22px;
+  max-width:950px;
+  margin:auto;
+  color:#e0e0e0;
+}
+.hero .cta{
+  margin-top:45px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.hero .cta button{
+  padding:18px 50px;
+  border-radius:50px;
+  border:none;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+}
+.primary{background:var(--primary)}
+.secondary{
+  background:transparent;
+  border:2px solid #fff;
+  color:#fff;
+}
+
+/* TRUST */
+.trust{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  font-size:14px;
+  color:#dcdcdc;
+}
+
+/* SECTION */
+section{
+  padding:110px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+section h2{
+  text-align:center;
+  font-size:44px;
+  margin-bottom:65px;
+}
+
+/* WHY */
+.why{
+  background:var(--soft);
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+.why-box{
+  background:#fff;
+  padding:45px 35px;
+  border-radius:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.1);
+}
+
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:28px;
+  box-shadow:0 18px 55px rgba(0,0,0,.12);
+  transition:.4s;
+}
+.card:hover{transform:translateY(-15px)}
+.divisi{
+  font-size:12px;
+  color:#777;
+  text-transform:uppercase;
+}
+.card h3{margin:16px 0}
+.card button{
+  margin-top:25px;
+  width:100%;
+  padding:15px;
+  border-radius:16px;
+  border:none;
+  background:#000;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* EBOOK – DIPERTAHANKAN */
+.ebook{
+  background:linear-gradient(135deg,#000,#111);
+  color:#fff;
+  border-radius:50px;
+  padding:120px 30px;
+  text-align:center;
+}
+.ebook p{
+  max-width:900px;
+  margin:auto;
+  font-size:22px;
+}
+.discount{
+  margin-top:30px;
+  font-size:26px;
+  font-weight:900;
+  color:var(--primary);
+}
+.countdown{
+  margin:40px 0;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+}
+.time{
+  background:#111;
+  padding:18px 22px;
+  border-radius:16px;
+  min-width:90px;
+}
+.time span{
+  display:block;
+  font-size:26px;
+  font-weight:900;
+  color:var(--primary);
+}
+.ebook button{
+  margin-top:50px;
+  padding:22px 60px;
+  border-radius:50px;
+  border:none;
+  background:var(--primary);
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:#ccc;
+  padding:70px 20px;
+  text-align:center;
+}
+footer strong{color:#fff}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>IMAGO Creative Group</h1>
-  <p>Aplikasi Penjualan Produk & Jasa Digital</p>
-</header>
+<nav>
+  <div class="navbox">
+    <strong>Imago Creative Group</strong>
+    <button onclick="scrollToId('layanan')">Mulai Sekarang</button>
+  </div>
+</nav>
 
-<section>
-  <h2>Daftar Layanan</h2>
-  <div class="grid" id="layanan"></div>
+<div class="hero">
+  <div>
+    <h1>Bangun Brand Digital <span>Yang Dipercaya & Menghasilkan</span></h1>
+    <p>
+      Imago Creative Group adalah partner strategis untuk bisnis, UMKM,
+      dan personal brand yang ingin tampil profesional dan unggul.
+    </p>
+    <div class="cta">
+      <button class="primary" onclick="scrollToId('layanan')">Lihat Layanan</button>
+      <button class="secondary" onclick="scrollToId('ebook')">Promo E-book</button>
+    </div>
+    <div class="trust">
+      <div>✔ Branding Fokus Penjualan</div>
+      <div>✔ Desain Premium</div>
+      <div>✔ Strategi Terukur</div>
+      <div>✔ Partner Jangka Panjang</div>
+    </div>
+  </div>
+</div>
+
+<section class="why">
+<h2>Mengapa Imago?</h2>
+<div class="why-grid">
+  <div class="why-box"><h3>Strategi</h3><p>Kreativitas dengan arah jelas.</p></div>
+  <div class="why-box"><h3>Kualitas</h3><p>Standar agency profesional.</p></div>
+  <div class="why-box"><h3>Growth</h3><p>Fokus dampak & hasil.</p></div>
+</div>
 </section>
 
-<section>
-  <h2>Tentang Kami</h2>
-  <p>
-    IMAGO Creative Group adalah perusahaan yang bergerak di bidang penjualan dan
-    pengembangan produk digital dengan standar profesionalisme tinggi. Kami
-    menghadirkan solusi digital yang inovatif, kreatif, dan berorientasi pada
-    kualitas untuk memenuhi kebutuhan bisnis di era modern.
-  </p>
+<section id="layanan">
+<h2>Layanan Lengkap Imago</h2>
+<div class="grid" id="services"></div>
+</section>
+
+<section id="ebook">
+<div class="ebook">
+<h2>E-book Digital Imago</h2>
+<p>
+E-book berkualitas tinggi yang dirancang khusus untuk Anda
+serta disajikan secara simpel, menarik, dan penuh kesan.
+</p>
+<div class="discount">Diskon 30% Hanya sampai 1 Februari</div>
+
+<div class="countdown">
+  <div class="time"><span id="d">0</span>Hari</div>
+  <div class="time"><span id="h">0</span>Jam</div>
+  <div class="time"><span id="m">0</span>Menit</div>
+  <div class="time"><span id="s">0</span>Detik</div>
+</div>
+
+<button onclick="order('E-book Digital Imago (Diskon 30%)')">
+Beli E-book Sekarang
+</button>
+</div>
 </section>
 
 <footer>
-  © 2026 IMAGO Creative Group. Semua hak dilindungi.
+<strong>Imago Creative Group</strong><br>
+Instagram: @ImagoCreative.id<br>
+TikTok: @imago.creative.group
 </footer>
 
 <script>
-  const services = [
-    { divisi: "Visual", nama: "Edit Foto", harga: "Rp 5.000 / foto" },
-    { divisi: "Visual", nama: "Edit Video", harga: "Rp 5.000 / video" },
-    { divisi: "Visual", nama: "Edit Canva", harga: "Rp 15.000 / desain" },
-    { divisi: "Visual", nama: "Edit ID Card", harga: "Rp 2.500 / desain" },
-    { divisi: "Visual", nama: "Edit Dokumen", harga: "Rp 25.000 – Rp 35.000" },
-    { divisi: "Visual", nama: "Desain Logo", harga: "Rp 50.000 – Rp 150.000" },
-    { divisi: "Kreatif", nama: "Skrip Kreatif", harga: "Rp 15.000 / skrip" },
-    { divisi: "Kreatif", nama: "Copywriting", harga: "Rp 10.000 – Rp 30.000" },
-    { divisi: "Marketing", nama: "Strategi Marketing", harga: "Rp 50.000 – Rp 100.000" },
-    { divisi: "Marketing", nama: "Konsultasi Marketing", harga: "Rp 75.000 / sesi" }
-  ];
+const services=[
+["Visual","Edit Foto","Rp 5.000 / foto"],
+["Visual","Edit Video","Rp 5.000 / video"],
+["Visual","Edit Canva","Rp 15.000 / desain"],
+["Visual","Edit ID Card","Rp 2.500 / desain"],
+["Visual","Edit Dokumen","Rp 25.000 – Rp 35.000"],
+["Visual","Desain Logo","Rp 50.000 – Rp 150.000"],
+["Visual","Konten Sosial Media","Rp 20.000 – Rp 50.000"],
+["Visual","Undangan Digital","Rp 25.000 – Rp 75.000"],
+["Visual","Motion Graphic","Rp 50.000 – Rp 100.000"],
+["Kreatif","Skrip Kreatif","Rp 15.000"],
+["Kreatif","Copywriting","Rp 10.000 – Rp 30.000"],
+["Kreatif","Ide Konten Bulanan","Rp 100.000"],
+["Marketing","Strategi Marketing","Rp 50.000 – Rp 100.000"],
+["Marketing","Konsultasi Marketing","Rp 75.000"]
+];
 
-  const container = document.getElementById("layanan");
+const box=document.getElementById("services");
+services.forEach(s=>{
+box.innerHTML+=`
+<div class="card">
+<div class="divisi">Divisi ${s[0]}</div>
+<h3>${s[1]}</h3>
+<p>${s[2]}</p>
+<button onclick="order('${s[1]}')">Pesan via WhatsApp</button>
+</div>`;
+});
 
-  services.forEach(s => {
-    container.innerHTML += `
-      <div class="card">
-        <div class="divisi">Divisi ${s.divisi}</div>
-        <h3>${s.nama}</h3>
-        <p>${s.harga}</p>
-        <button onclick="order('${s.nama}')">Pesan Sekarang</button>
-      </div>
-    `;
-  });
+function order(n){
+const wa="6289508551377";
+const t=encodeURIComponent("Halo Imago Creative Group, saya ingin memesan: "+n);
+window.open(`https://wa.me/${wa}?text=${t}`,"_blank");
+}
+function scrollToId(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
 
-  function order(nama) {
-    const wa = "+62 895-0855-1377"; // ganti nomor WA
-    const text = encodeURIComponent(
-      "Halo IMAGO Creative Group, saya ingin memesan layanan: " + nama
-    );
-    window.open(`https://wa.me/${wa}?text=${text}`, "_blank");
-  }
+/* COUNTDOWN */
+const target=new Date("Feb 1, 2026 23:59:59").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const dtime=target-now;
+if(dtime<0)return;
+d.innerText=Math.floor(dtime/(1000*60*60*24));
+h.innerText=Math.floor((dtime%(1000*60*60*24))/(1000*60*60));
+m.innerText=Math.floor((dtime%(1000*60*60))/(1000*60));
+s.innerText=Math.floor((dtime%(1000*60))/1000);
+},1000);
 </script>
 
 </body>
 </html>
+
 
