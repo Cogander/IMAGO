@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imago Creative Group</title>
+
+<!-- SEO BASIC -->
+<title>Imago Creative Group | Jasa Desain, Kreatif & Marketing Digital</title>
+<meta name="description" content="Imago Creative Group menyediakan jasa desain visual, kreatif, marketing digital, dan e-book profesional untuk UMKM & bisnis.">
+<meta name="keywords" content="Imago Creative Group, jasa desain, jasa marketing, jasa kreatif, e-book digital">
+<meta name="author" content="Imago Creative Group">
 
 <style>
 :root{
@@ -16,7 +21,7 @@ body{
   font-family:'Inter','Segoe UI',Arial,sans-serif;
   background:#fff;
   color:#1a1a1a;
-  line-height:1.8;
+  line-height:1.7;
 }
 
 /* NAV */
@@ -24,72 +29,91 @@ nav{
   position:fixed;
   top:0;left:0;
   width:100%;
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.9);
   backdrop-filter:blur(10px);
   z-index:100;
 }
 .navbox{
   max-width:1200px;
   margin:auto;
-  padding:15px 20px;
+  padding:14px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   color:#fff;
 }
-.navbox strong{font-size:18px}
-.navbox button{
-  padding:10px 22px;
-  border-radius:50px;
-  border:none;
-  background:var(--primary);
-  color:#000;
-  font-weight:700;
+.navbox strong{font-size:16px}
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+.menu-btn{
+  display:none;
+  font-size:26px;
   cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  display:none;
+  background:#000;
+  padding:20px;
+}
+.mobile-menu a{
+  display:block;
+  color:#fff;
+  padding:12px 0;
+  text-decoration:none;
+  font-weight:600;
+  border-bottom:1px solid #222;
 }
 
 /* HERO */
 .hero{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95)),
     url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
   background-size:cover;
   background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:120px 20px 60px;
+  padding:120px 18px 60px;
   text-align:center;
   color:#fff;
 }
-.hero img{width:150px;margin-bottom:30px}
 .hero h1{
-  font-size:64px;
+  font-size:48px;
   line-height:1.2;
-  margin-bottom:25px;
+  margin-bottom:22px;
 }
 .hero h1 span{color:var(--primary)}
 .hero p{
-  font-size:22px;
-  max-width:950px;
+  font-size:18px;
+  max-width:900px;
   margin:auto;
   color:#e0e0e0;
 }
-.hero .cta{
-  margin-top:45px;
+.cta{
+  margin-top:35px;
   display:flex;
-  gap:20px;
+  gap:15px;
   justify-content:center;
   flex-wrap:wrap;
 }
-.hero .cta button{
-  padding:18px 50px;
+.cta button{
+  padding:14px 36px;
   border-radius:50px;
   border:none;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
+  font-size:15px;
+  font-weight:900;
 }
 .primary{background:var(--primary)}
 .secondary{
@@ -100,129 +124,134 @@ nav{
 
 /* TRUST */
 .trust{
-  margin-top:70px;
+  margin-top:40px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
-  font-size:14px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:16px;
+  font-size:13px;
   color:#dcdcdc;
 }
 
 /* SECTION */
 section{
-  padding:110px 20px;
+  padding:90px 18px;
   max-width:1200px;
   margin:auto;
 }
 section h2{
   text-align:center;
-  font-size:44px;
-  margin-bottom:65px;
+  font-size:38px;
+  margin-bottom:50px;
 }
 
 /* WHY */
-.why{
-  background:var(--soft);
-}
+.why{background:var(--soft)}
 .why-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:35px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
 }
 .why-box{
   background:#fff;
-  padding:45px 35px;
-  border-radius:28px;
-  box-shadow:0 18px 45px rgba(0,0,0,.1);
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
 /* SERVICES */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 .card{
   background:#fff;
-  padding:35px;
-  border-radius:28px;
-  box-shadow:0 18px 55px rgba(0,0,0,.12);
-  transition:.4s;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 15px 45px rgba(0,0,0,.15);
 }
-.card:hover{transform:translateY(-15px)}
 .divisi{
-  font-size:12px;
-  color:#777;
+  font-size:11px;
   text-transform:uppercase;
+  color:#777;
 }
-.card h3{margin:16px 0}
+.card h3{margin:14px 0;font-size:20px}
+.card p{font-size:14px}
 .card button{
-  margin-top:25px;
+  margin-top:20px;
   width:100%;
-  padding:15px;
-  border-radius:16px;
+  padding:13px;
+  border-radius:14px;
   border:none;
   background:#000;
   color:#fff;
-  cursor:pointer;
 }
 
-/* EBOOK – DIPERTAHANKAN */
+/* EBOOK */
 .ebook{
   background:linear-gradient(135deg,#000,#111);
   color:#fff;
-  border-radius:50px;
-  padding:120px 30px;
+  border-radius:40px;
+  padding:90px 20px;
   text-align:center;
 }
 .ebook p{
-  max-width:900px;
+  max-width:850px;
   margin:auto;
-  font-size:22px;
+  font-size:18px;
 }
 .discount{
-  margin-top:30px;
-  font-size:26px;
+  margin-top:25px;
+  font-size:22px;
   font-weight:900;
   color:var(--primary);
 }
 .countdown{
-  margin:40px 0;
+  margin:35px 0;
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:12px;
+  flex-wrap:wrap;
 }
 .time{
   background:#111;
-  padding:18px 22px;
-  border-radius:16px;
-  min-width:90px;
+  padding:14px 16px;
+  border-radius:14px;
+  min-width:70px;
 }
 .time span{
   display:block;
-  font-size:26px;
+  font-size:22px;
   font-weight:900;
   color:var(--primary);
 }
 .ebook button{
-  margin-top:50px;
-  padding:22px 60px;
+  margin-top:35px;
+  padding:18px 42px;
   border-radius:50px;
   border:none;
   background:var(--primary);
-  font-size:20px;
+  font-size:17px;
   font-weight:900;
-  cursor:pointer;
 }
 
 /* FOOTER */
 footer{
   background:#000;
   color:#ccc;
-  padding:70px 20px;
+  padding:50px 18px;
   text-align:center;
+  font-size:14px;
 }
 footer strong{color:#fff}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .hero h1{font-size:34px}
+  section h2{font-size:30px}
+}
 </style>
 </head>
 
@@ -231,41 +260,39 @@ footer strong{color:#fff}
 <nav>
   <div class="navbox">
     <strong>Imago Creative Group</strong>
-    <button onclick="scrollToId('layanan')">Mulai Sekarang</button>
+    <div class="nav-links">
+      <a href="#layanan">Layanan</a>
+      <a href="#ebook">E-book</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#layanan" onclick="toggleMenu()">Layanan</a>
+    <a href="#ebook" onclick="toggleMenu()">E-book</a>
+    <a href="#kontak" onclick="toggleMenu()">Kontak</a>
   </div>
 </nav>
 
 <div class="hero">
   <div>
-    <h1>Bangun Brand Digital <span>Yang Dipercaya & Menghasilkan</span></h1>
-    <p>
-      Imago Creative Group adalah partner strategis untuk bisnis, UMKM,
-      dan personal brand yang ingin tampil profesional dan unggul.
-    </p>
+    <h1>Bangun Brand Digital <span>Yang Menghasilkan</span></h1>
+    <p>Partner kreatif & marketing untuk UMKM, bisnis, dan personal brand.</p>
     <div class="cta">
       <button class="primary" onclick="scrollToId('layanan')">Lihat Layanan</button>
       <button class="secondary" onclick="scrollToId('ebook')">Promo E-book</button>
     </div>
     <div class="trust">
-      <div>✔ Branding Fokus Penjualan</div>
+      <div>✔ Fokus Penjualan</div>
       <div>✔ Desain Premium</div>
-      <div>✔ Strategi Terukur</div>
-      <div>✔ Partner Jangka Panjang</div>
+      <div>✔ Strategi Jelas</div>
+      <div>✔ Profesional</div>
     </div>
   </div>
 </div>
 
-<section class="why">
-<h2>Mengapa Imago?</h2>
-<div class="why-grid">
-  <div class="why-box"><h3>Strategi</h3><p>Kreativitas dengan arah jelas.</p></div>
-  <div class="why-box"><h3>Kualitas</h3><p>Standar agency profesional.</p></div>
-  <div class="why-box"><h3>Growth</h3><p>Fokus dampak & hasil.</p></div>
-</div>
-</section>
-
 <section id="layanan">
-<h2>Layanan Lengkap Imago</h2>
+<h2>Katalog Harga Layanan</h2>
 <div class="grid" id="services"></div>
 </section>
 
@@ -277,41 +304,52 @@ E-book berkualitas tinggi yang dirancang khusus untuk Anda
 serta disajikan secara simpel, menarik, dan penuh kesan.
 </p>
 <div class="discount">Diskon 30% Hanya sampai 1 Februari</div>
-
 <div class="countdown">
   <div class="time"><span id="d">0</span>Hari</div>
   <div class="time"><span id="h">0</span>Jam</div>
   <div class="time"><span id="m">0</span>Menit</div>
   <div class="time"><span id="s">0</span>Detik</div>
 </div>
-
 <button onclick="order('E-book Digital Imago (Diskon 30%)')">
 Beli E-book Sekarang
 </button>
 </div>
 </section>
 
-<footer>
+<footer id="kontak">
 <strong>Imago Creative Group</strong><br>
 Instagram: @ImagoCreative.id<br>
 TikTok: @imago.creative.group
 </footer>
 
 <script>
+/* MENU */
+function toggleMenu(){
+  const m=document.getElementById("mobileMenu");
+  m.style.display = m.style.display==="block" ? "none" : "block";
+}
+
+/* SERVICES */
 const services=[
 ["Visual","Edit Foto","Rp 5.000 / foto"],
 ["Visual","Edit Video","Rp 5.000 / video"],
 ["Visual","Edit Canva","Rp 15.000 / desain"],
 ["Visual","Edit ID Card","Rp 2.500 / desain"],
+["Visual","Edit selain di atas","Rp 2.500 – Rp 50.000"],
 ["Visual","Edit Dokumen","Rp 25.000 – Rp 35.000"],
 ["Visual","Desain Logo","Rp 50.000 – Rp 150.000"],
-["Visual","Konten Sosial Media","Rp 20.000 – Rp 50.000"],
-["Visual","Undangan Digital","Rp 25.000 – Rp 75.000"],
-["Visual","Motion Graphic","Rp 50.000 – Rp 100.000"],
-["Kreatif","Skrip Kreatif","Rp 15.000"],
+["Visual","Desain Konten Sosial Media","Rp 20.000 – Rp 50.000"],
+["Visual","Desain Undangan","Rp 25.000 – Rp 75.000"],
+["Visual","Motion Graphic sederhana","Rp 50.000 – Rp 100.000"],
+["Kreatif","Membuat Skrip Kreatif","Rp 15.000"],
+["Kreatif","Membuat Konsep Kampanye Kreatif","Rp 50.000 – Rp 100.000"],
 ["Kreatif","Copywriting","Rp 10.000 – Rp 30.000"],
+["Kreatif","Storyboard / Outline konten","Rp 20.000 – Rp 50.000"],
 ["Kreatif","Ide Konten Bulanan","Rp 100.000"],
-["Marketing","Strategi Marketing","Rp 50.000 – Rp 100.000"],
+["Marketing","Strategi Marketing Dasar","Rp 50.000 – Rp 100.000"],
+["Marketing","Penyusunan Rencana Promosi","Rp 75.000 – Rp 150.000"],
+["Marketing","Riset Target Audience","Rp 50.000 – Rp 100.000"],
+["Marketing","Social Media Management","Rp 100.000 – Rp 300.000"],
 ["Marketing","Konsultasi Marketing","Rp 75.000"]
 ];
 
@@ -319,13 +357,14 @@ const box=document.getElementById("services");
 services.forEach(s=>{
 box.innerHTML+=`
 <div class="card">
-<div class="divisi">Divisi ${s[0]}</div>
-<h3>${s[1]}</h3>
-<p>${s[2]}</p>
-<button onclick="order('${s[1]}')">Pesan via WhatsApp</button>
+  <div class="divisi">Divisi ${s[0]}</div>
+  <h3>${s[1]}</h3>
+  <p>${s[2]}</p>
+  <button onclick="order('${s[1]}')">Pesan via WhatsApp</button>
 </div>`;
 });
 
+/* ACTIONS */
 function order(n){
 const wa="6289508551377";
 const t=encodeURIComponent("Halo Imago Creative Group, saya ingin memesan: "+n);
@@ -339,15 +378,14 @@ document.getElementById(id).scrollIntoView({behavior:"smooth"});
 const target=new Date("Feb 1, 2026 23:59:59").getTime();
 setInterval(()=>{
 const now=new Date().getTime();
-const dtime=target-now;
-if(dtime<0)return;
-d.innerText=Math.floor(dtime/(1000*60*60*24));
-h.innerText=Math.floor((dtime%(1000*60*60*24))/(1000*60*60));
-m.innerText=Math.floor((dtime%(1000*60*60))/(1000*60));
-s.innerText=Math.floor((dtime%(1000*60))/1000);
+const diff=target-now;
+if(diff<0)return;
+d.innerText=Math.floor(diff/(1000*60*60*24));
+h.innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+m.innerText=Math.floor((diff%(1000*60*60))/(1000*60));
+s.innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
 </script>
 
 </body>
 </html>
-
