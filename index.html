@@ -1,187 +1,329 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promo E-book | Imago Creative Group</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imago Creative Group</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+:root{
+  --primary:#00e0ff;
+  --dark:#0a0a0a;
+  --soft:#f5f7fa;
+  --danger:#ff3b3b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#fff;
+  color:#1a1a1a;
+  line-height:1.7;
+}
 
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+.navbox{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#fff;
+}
+.navbox strong{font-size:16px}
+.menu-btn{display:none;font-size:26px;cursor:pointer}
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 24px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, #000, #0b0b0b);
-      text-align: center;
-    }
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 18px 60px;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:44px;
+  margin-bottom:20px;
+}
+.hero h1 span{color:var(--primary)}
+.hero p{
+  font-size:18px;
+  max-width:900px;
+  margin:auto;
+  color:#e0e0e0;
+}
+.cta{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.cta button{
+  padding:14px 36px;
+  border-radius:50px;
+  border:none;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+}
+.primary{background:var(--primary)}
+.secondary{
+  background:transparent;
+  border:2px solid #fff;
+  color:#fff;
+}
 
-    .promo-title {
-      color: #ff3b3b;
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+/* SECTION */
+section{
+  padding:90px 18px;
+  max-width:1200px;
+  margin:auto;
+}
+section h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:50px;
+}
 
-    /* 🔽 TEKS BARU DISKON ALL PRODUCT */
-    .promo-subtitle {
-      color: #ff3b3b;
-      font-size: 15px;
-      margin-bottom: 26px;
-      line-height: 1.5;
-    }
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:#fff;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 15px 45px rgba(0,0,0,.15);
+}
+.divisi{
+  font-size:11px;
+  text-transform:uppercase;
+  color:#777;
+}
+.card h3{margin:14px 0;font-size:20px}
+.card p{font-size:14px}
+.card button{
+  margin-top:20px;
+  width:100%;
+  padding:13px;
+  border-radius:14px;
+  border:none;
+  background:#000;
+  color:#fff;
+  cursor:pointer;
+}
 
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
-    }
+/* EBOOK */
+.ebook{
+  background:linear-gradient(135deg,#000,#111);
+  color:#fff;
+  border-radius:40px;
+  padding:90px 20px;
+  text-align:center;
+}
+.ebook p{
+  max-width:850px;
+  margin:auto;
+  font-size:18px;
+}
+.discount{
+  margin-top:25px;
+  font-size:22px;
+  font-weight:900;
+  color:var(--danger);
+}
+.info-diskon{
+  margin-top:15px;
+  font-size:16px;
+  font-weight:700;
+  color:#ff8080;
+}
 
-    .time-box {
-      background: #111;
-      width: 90px;
-      padding: 18px 10px;
-      border-radius: 18px;
-      box-shadow: inset 0 0 10px rgba(255,255,255,0.04);
-    }
+/* COUNTDOWN */
+.countdown{
+  margin:35px 0;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.time{
+  background:#111;
+  padding:14px 16px;
+  border-radius:14px;
+  min-width:70px;
+}
+.time span{
+  display:block;
+  font-size:22px;
+  font-weight:900;
+  color:var(--danger);
+}
 
-    .time-box span {
-      display: block;
-      color: #ff3b3b;
-      font-size: 26px;
-      font-weight: bold;
-    }
+/* FOOTER */
+footer{
+  background:#000;
+  color:#ccc;
+  padding:50px 18px;
+  text-align:center;
+  font-size:14px;
+}
+footer strong{color:#fff}
 
-    .time-box small {
-      font-size: 14px;
-      color: #fff;
-    }
-
-    .time-box.center {
-      width: 120px;
-    }
-
-    .btn-buy {
-      margin-top: 10px;
-      background: #ff3b3b;
-      color: #000;
-      border: none;
-      padding: 16px;
-      width: 100%;
-      border-radius: 40px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn-buy:hover {
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 36px;
-      text-align: center;
-      color: #ccc;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    footer strong {
-      color: #fff;
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        max-width: 520px;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:32px}
+  section h2{font-size:28px}
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <!-- PROMOSI E-BOOK -->
-    <div class="promo-title">
-      Diskon 30% Hanya sampai 1 Februari
-    </div>
-
-    <!-- 🔽 DISKON ALL PRODUCT (TAMBAHAN BARU) -->
-    <div class="promo-subtitle">
-      Informasi Diskon<br>
-      <strong>30% all product</strong> dalam rangka Tahun Baru<br>
-      s.d 1 Februari 2026
-    </div>
-
-    <!-- COUNTDOWN -->
-    <div class="countdown">
-      <div class="time-box">
-        <span id="days">0</span>
-        <small>Hari</small>
-      </div>
-      <div class="time-box">
-        <span id="hours">0</span>
-        <small>Jam</small>
-      </div>
-      <div class="time-box">
-        <span id="minutes">0</span>
-        <small>Menit</small>
-      </div>
-      <div class="time-box center">
-        <span id="seconds">0</span>
-        <small>Detik</small>
-      </div>
-    </div>
-
-    <!-- BUTTON -->
-    <button class="btn-buy">
-      Beli E-book Sekarang
-    </button>
-
-    <!-- FOOTER -->
-    <footer>
-      <strong>Imago Creative Group</strong><br>
-      Instagram: @ImagoCreative.id<br>
-      TikTok: @imago.creative.group
-    </footer>
-
+<nav>
+  <div class="navbox">
+    <strong>Imago Creative Group</strong>
   </div>
+</nav>
 
-  <script>
-    const targetDate = new Date("2026-02-01T23:59:59").getTime();
+<div class="hero">
+  <div>
+    <h1>Bangun Brand Digital <span>Yang Menghasilkan</span></h1>
+    <p>Partner kreatif & marketing untuk UMKM, bisnis, dan personal brand.</p>
+    <div class="cta">
+      <button class="primary" onclick="scrollToId('layanan')">Mulai Sekarang</button>
+      <button class="secondary" onclick="scrollToId('ebook')">Beli E-Book</button>
+    </div>
+  </div>
+</div>
 
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+<section id="layanan">
+<h2>Katalog Harga Layanan</h2>
+<div class="grid" id="services"></div>
+</section>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<section id="ebook">
+<div class="ebook">
+<h2>E-book Digital Imago</h2>
+<p>
+E-book berkualitas tinggi yang dirancang khusus untuk Anda
+serta disajikan secara simpel, menarik, dan penuh kesan.
+</p>
 
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-    }, 1000);
-  </script>
+<div class="discount">Diskon 30% Hanya sampai 1 Februari</div>
+<div class="info-diskon">
+Informasi Diskon<br>
+30% all product dalam rangka Tahun Baru<br>
+S.D 1 Februari 2026
+</div>
+
+<div class="countdown">
+  <div class="time"><span id="d">0</span>Hari</div>
+  <div class="time"><span id="h">0</span>Jam</div>
+  <div class="time"><span id="m">0</span>Menit</div>
+  <div class="time"><span id="s">0</span>Detik</div>
+</div>
+
+<button onclick="order('E-book Digital Imago')">
+Beli E-book Sekarang
+</button>
+</div>
+</section>
+
+<footer>
+<strong>Imago Creative Group</strong><br>
+Instagram: @ImagoCreative.id<br>
+TikTok: @imago.creative.group
+</footer>
+
+<script>
+/* ====== DATA LAYANAN (20 ITEM) ====== */
+const services=[
+["Visual","Edit Foto","Rp 5.000 / foto"],
+["Visual","Edit Video","Rp 5.000 / video"],
+["Visual","Edit Canva","Rp 15.000 / desain"],
+["Visual","Edit ID Card","Rp 2.500 / desain"],
+["Visual","Edit selain di atas","Rp 2.500 – Rp 50.000"],
+["Visual","Edit Dokumen","Rp 25.000 – Rp 35.000"],
+["Visual","Desain Logo","Rp 50.000 – Rp 150.000"],
+["Visual","Desain Konten Sosial Media","Rp 20.000 – Rp 50.000"],
+["Visual","Desain Undangan","Rp 25.000 – Rp 75.000"],
+["Visual","Motion Graphic sederhana","Rp 50.000 – Rp 100.000"],
+["Kreatif","Membuat Skrip Kreatif","Rp 15.000"],
+["Kreatif","Membuat Konsep Kampanye Kreatif","Rp 50.000 – Rp 100.000"],
+["Kreatif","Copywriting","Rp 10.000 – Rp 30.000"],
+["Kreatif","Storyboard / Outline konten","Rp 20.000 – Rp 50.000"],
+["Kreatif","Ide Konten Bulanan","Rp 100.000"],
+["Marketing","Strategi Marketing Dasar","Rp 50.000 – Rp 100.000"],
+["Marketing","Penyusunan Rencana Promosi","Rp 75.000 – Rp 150.000"],
+["Marketing","Riset Target Audience","Rp 50.000 – Rp 100.000"],
+["Marketing","Social Media Management","Rp 100.000 – Rp 300.000"],
+["Marketing","Konsultasi Marketing","Rp 75.000"]
+];
+
+const box=document.getElementById("services");
+services.forEach(s=>{
+box.innerHTML+=`
+<div class="card">
+  <div class="divisi">Divisi ${s[0]}</div>
+  <h3>${s[1]}</h3>
+  <p>${s[2]}</p>
+  <button onclick="order('${s[1]}')">Pesan via WhatsApp</button>
+</div>`;
+});
+
+/* ====== WA 1 & WA 2 ====== */
+function order(namaProduk){
+  const waLayanan = "6289508551377";   // GANTI WA ADMIN
+  const waMonitor = "6282281486780";  // GANTI WA MONITOR
+
+  const pesanUser = encodeURIComponent(
+    "Halo Imago Creative Group, saya ingin memesan: " + namaProduk
+  );
+
+  const pesanMonitor = encodeURIComponent(
+    "📢 ORDER MASUK\nProduk: " + namaProduk + "\nSumber: Website"
+  );
+
+  window.open(`https://wa.me/${waLayanan}?text=${pesanUser}`,"_blank");
+  setTimeout(()=>{
+    window.open(`https://wa.me/${waMonitor}?text=${pesanMonitor}`,"_blank");
+  },600);
+}
+
+function scrollToId(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* COUNTDOWN */
+const target=new Date("Feb 1, 2026 23:59:59").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const diff=target-now;
+if(diff<0)return;
+d.innerText=Math.floor(diff/(1000*60*60*24));
+h.innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+m.innerText=Math.floor((diff%(1000*60*60))/(1000*60));
+s.innerText=Math.floor((diff%(1000*60))/1000);
+},1000);
+</script>
 
 </body>
 </html>
