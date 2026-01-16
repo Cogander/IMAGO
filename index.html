@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Imago Creative Group | Digital Creative & Marketing</title>
-<meta name="description" content="Imago Creative Group menyediakan jasa desain, kreatif, marketing digital, dan e-book profesional.">
+<meta name="description" content="Imago Creative Group membantu bisnis, personal brand, dan UMKM berkembang melalui desain visual, konten kreatif, produk digital, dan strategi marketing modern.">
 
 <style>
 :root{
+  --primary:#00e0ff;
   --dark:#000;
   --light:#fff;
-  --soft:#f4f4f4;
-  --primary:#00e0ff;
   --danger:#ff3b3b;
 }
 
@@ -25,46 +24,78 @@ body{
   line-height:1.7;
 }
 
-/* ===== HERO (SESUAI GAMBAR) ===== */
+/* ===== HERO ===== */
 .hero{
   min-height:100vh;
-  background:linear-gradient(180deg,#000,#111);
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+  background-size:cover;
+  background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:40px 20px;
   text-align:center;
+  padding:40px 20px;
   color:#fff;
 }
 
 .hero h1{
   font-size:42px;
-  font-weight:800;
-  margin-bottom:20px;
+  font-weight:900;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:var(--primary);
 }
 
 .hero p{
-  max-width:720px;
+  max-width:780px;
   margin:auto;
   font-size:17px;
-  color:#ddd;
+  color:#e0e0e0;
 }
 
-.hero button{
+.cta{
   margin-top:40px;
-  padding:16px 40px;
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.cta button{
+  padding:16px 38px;
   border:none;
   border-radius:50px;
-  background:#fff;
-  color:#000;
-  font-size:16px;
+  font-size:15px;
   font-weight:800;
   cursor:pointer;
 }
 
+.btn-primary{
+  background:var(--primary);
+  color:#000;
+}
+
+.btn-secondary{
+  background:#fff;
+  color:#000;
+}
+
+/* TRUST */
+.trust{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+  font-size:14px;
+}
+
 /* ===== SECTION ===== */
 section{
-  padding:80px 20px;
+  padding:90px 20px;
   max-width:1200px;
   margin:auto;
 }
@@ -113,7 +144,6 @@ section h2{
   background:#000;
   color:#fff;
   font-weight:700;
-  cursor:pointer;
 }
 
 /* ===== EBOOK ===== */
@@ -121,17 +151,17 @@ section h2{
   background:linear-gradient(135deg,#000,#111);
   color:#fff;
   border-radius:40px;
-  padding:80px 20px;
+  padding:90px 20px;
   text-align:center;
 }
 
 .ebook p{
-  max-width:820px;
+  max-width:850px;
   margin:auto;
   font-size:18px;
 }
 
-.promo{
+.discount{
   margin-top:25px;
   font-size:22px;
   font-weight:900;
@@ -167,7 +197,6 @@ section h2{
   background:var(--danger);
   font-size:17px;
   font-weight:900;
-  cursor:pointer;
 }
 
 /* ===== FOOTER ===== */
@@ -194,13 +223,31 @@ footer strong{color:#fff}
 <!-- HERO -->
 <div class="hero">
   <div>
-    <h1>Imago Creative Group</h1>
+    <h1>
+      Bangun Brand Digital<br>
+      <span>Lebih Profesional & Meyakinkan</span>
+    </h1>
+
     <p>
-      Solusi profesional untuk produk digital, E-book, desain visual,
-      konten kreatif, dan strategi marketing yang membantu bisnis Anda
-      tumbuh lebih cepat dan terpercaya.
+      Imago Creative Group membantu bisnis, personal brand, dan UMKM
+      berkembang melalui desain visual, konten kreatif, produk digital,
+      dan strategi marketing modern.
     </p>
-    <button onclick="scrollToId('layanan')">Lihat Semua Layanan</button>
+
+    <div class="cta">
+      <button class="btn-primary" onclick="scrollToId('layanan')">
+        Mulai Sekarang
+      </button>
+      <button class="btn-secondary" onclick="scrollToId('ebook')">
+        Beli E-Book
+      </button>
+    </div>
+
+    <div class="trust">
+      <div>✔ Profesional</div>
+      <div>✔ Harga Terjangkau</div>
+      <div>✔ Fast Response</div>
+    </div>
   </div>
 </div>
 
@@ -211,15 +258,15 @@ footer strong{color:#fff}
 </section>
 
 <!-- EBOOK -->
-<section>
+<section id="ebook">
 <div class="ebook">
 <h2>E-book Digital Imago</h2>
 <p>
-E-book berkualitas tinggi yang dirancang khusus untuk Anda serta
-disajikan secara simpel, menarik, dan penuh kesan.
+E-book berkualitas tinggi yang dirancang khusus untuk Anda
+serta disajikan secara simpel, menarik, dan penuh kesan.
 </p>
 
-<div class="promo">Diskon 30% Hanya sampai 1 Februari</div>
+<div class="discount">Diskon 30% Hanya sampai 1 Februari</div>
 
 <div class="countdown">
   <div class="time"><span id="d">0</span>Hari</div>
@@ -234,7 +281,6 @@ Beli E-book Sekarang
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
 <strong>Imago Creative Group</strong><br>
 Instagram: @ImagoCreative.id<br>
@@ -242,30 +288,30 @@ TikTok: @imago.creative.group
 </footer>
 
 <script>
-/* SERVICES DATA (20 ITEM FULL) */
+/* === 20 LAYANAN LENGKAP (TIDAK ADA YANG HILANG) === */
 const services=[
 ["Visual","Edit Foto","Rp 5.000 / foto"],
 ["Visual","Edit Video","Rp 5.000 / video"],
-["Visual","Edit Canva","Rp 15.000 / desain"],
+["Visual","Edit Canva (slide, poster, banner, brosur, dsb.)","Rp 15.000 / desain"],
 ["Visual","Edit ID Card","Rp 2.500 / desain"],
 ["Visual","Edit selain di atas","Rp 2.500 – Rp 50.000"],
-["Visual","Edit Dokumen","Rp 25.000 – Rp 35.000"],
+["Visual","Edit Dokumen","Rp 25.000 – Rp 35.000 / dokumen"],
 ["Visual","Desain Logo","Rp 50.000 – Rp 150.000"],
-["Visual","Desain Konten Sosial Media","Rp 20.000 – Rp 50.000"],
+["Visual","Desain Konten Sosial Media","Rp 20.000 – Rp 50.000 / konten"],
 ["Visual","Desain Undangan","Rp 25.000 – Rp 75.000"],
 ["Visual","Motion Graphic sederhana","Rp 50.000 – Rp 100.000"],
 
 ["Kreatif","Membuat Skrip Kreatif","Rp 15.000 / skrip"],
 ["Kreatif","Membuat Konsep Kampanye Kreatif","Rp 50.000 – Rp 100.000"],
-["Kreatif","Copywriting","Rp 10.000 – Rp 30.000"],
+["Kreatif","Copywriting","Rp 10.000 – Rp 30.000 / teks"],
 ["Kreatif","Storyboard / Outline konten","Rp 20.000 – Rp 50.000"],
-["Kreatif","Ide Konten Bulanan (10 ide)","Rp 100.000"],
+["Kreatif","Ide Konten Bulanan (paket 10 ide)","Rp 100.000"],
 
 ["Marketing","Strategi Marketing Dasar","Rp 50.000 – Rp 100.000"],
 ["Marketing","Penyusunan Rencana Promosi","Rp 75.000 – Rp 150.000"],
 ["Marketing","Riset Target Audience","Rp 50.000 – Rp 100.000"],
-["Marketing","Social Media Management","Rp 100.000 – Rp 300.000"],
-["Marketing","Konsultasi Marketing","Rp 75.000"]
+["Marketing","Social Media Management (per minggu)","Rp 100.000 – Rp 300.000"],
+["Marketing","Konsultasi Marketing (1 jam)","Rp 75.000"]
 ];
 
 const box=document.getElementById("services");
@@ -279,14 +325,13 @@ box.innerHTML+=`
 </div>`;
 });
 
-/* WHATSAPP */
+/* ACTIONS */
 function order(n){
 const wa="6289508551377";
 const t=encodeURIComponent("Halo Imago Creative Group, saya ingin memesan: "+n);
 window.open("https://wa.me/"+wa+"?text="+t,"_blank");
 }
 
-/* SCROLL */
 function scrollToId(id){
 document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
