@@ -19,7 +19,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:'Inter','Segoe UI',Arial,sans-serif;
-  background:#fff;
+  background:#74a1df;
   color:#1a1a1a;
   line-height:1.7;
 }
@@ -87,7 +87,7 @@ nav{
   justify-content:center;
   padding:120px 18px 60px;
   text-align:center;
-  color:#fff;
+  color:#8abad6;
 }
 .hero h1{
   font-size:48px;
@@ -152,7 +152,7 @@ section h2{
   gap:25px;
 }
 .why-box{
-  background:#fff;
+  background:#ffffff;
   padding:35px;
   border-radius:22px;
   box-shadow:0 15px 40px rgba(0,0,0,.12);
@@ -189,7 +189,7 @@ section h2{
 
 /* EBOOK */
 .ebook{
-  background:linear-gradient(135deg,#dd0808,#111);
+  background:linear-gradient(135deg,#1d6cb6,#111);
   color:#ffffff;
   border-radius:40px;
   padding:90px 20px;
@@ -283,10 +283,10 @@ footer strong{color:#fff}
       <button class="secondary" onclick="scrollToId('ebook')">Promo E-book</button>
     </div>
     <div class="trust">
-      <div>✔ Fokus Penjualan</div>
-      <div>✔ Desain Premium</div>
-      <div>✔ Strategi Jelas</div>
-      <div>✔ Profesional</div>
+      <div>Fokus Penjualan</div>
+      <div>Desain Premium</div>
+      <div>Strategi Jelas</div>
+      <div>Profesional</div>
     </div>
   </div>
 </div>
@@ -303,15 +303,10 @@ footer strong{color:#fff}
 E-book berkualitas tinggi yang dirancang khusus untuk Anda
 serta disajikan secara simpel, menarik, dan penuh kesan.
 </p>
-<div class="discount">Premium Disccount All Product 18 Februari-3 Mei!!</div>
-<div class="countdown">
-  <div class="time"><span id="d">0</span>Hari</div>
-  <div class="time"><span id="h">0</span>Jam</div>
-  <div class="time"><span id="m">0</span>Menit</div>
-  <div class="time"><span id="s">0</span>Detik</div>
-</div>
-<button onclick="order('E-book Digital Imago (Diskon 20%)')">
-Beli E-book Sekarang
+<div class="discount"></div>
+
+<button onclick="order('E-book Digital Imago')">
+Beli E-book
 </button>
 </div>
 </section>
@@ -366,7 +361,7 @@ box.innerHTML+=`
 
 /* ACTIONS */
 function order(n){
-const wa="6289508551377";
+const wa="6282281486780";
 const t=encodeURIComponent("Halo Imago Creative Group, saya ingin memesan: "+n);
 window.open(`https://wa.me/${wa}?text=${t}`,"_blank");
 }
@@ -380,4 +375,3 @@ document.getElementById(id).scrollIntoView({behavior:"smooth"});
 
 </body>
 </html>
-
