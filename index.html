@@ -9,7 +9,7 @@
 <style>
 
 :root{
---primary:#ffffff;
+--primary:#ff0000;
 }
 
 *{
@@ -20,8 +20,8 @@ box-sizing:border-box;
 
 body{
 font-family:Segoe UI,Arial;
-background:#81b61f;
-color:#1a1a1a;
+background:#35353a; /*BACKGROUND UTAMA*/
+color:#000000;
 line-height:1.7;
 }
 
@@ -31,7 +31,7 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-background:#000;
+background:#ffffff;
 color:white;
 z-index:100;
 }
@@ -115,7 +115,7 @@ gap:30px;
 background:white;
 padding:25px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 .divisi{
@@ -135,12 +135,13 @@ border:none;
 background:black;
 color:white;
 border-radius:10px;
+cursor:pointer;
 }
 
 /* EBOOK */
 
 .ebook{
-background:linear-gradient(135deg,#4ae900,#111);
+background:linear-gradient(135deg,#9e8282,#111);
 color:white;
 border-radius:40px;
 padding:80px 20px;
@@ -198,54 +199,20 @@ color:black;
 /* FOOTER */
 
 footer{
-background:black;
+background:rgb(0, 0, 0);
 color:white;
 text-align:center;
 padding:40px;
 }
 
-/* KETUPAT SVG */
-
-.ketupat{
-position:fixed;
-top:0;
-width:80px;
-z-index:10;
-animation:goyang 4s infinite;
-}
-
-.kiri{left:30px}
-.kanan{right:30px}
-
-@keyframes goyang{
-0%{transform:rotate(6deg)}
-50%{transform:rotate(-6deg)}
-100%{transform:rotate(6deg)}
-}
-
 @media(max-width:768px){
 .hero h1{font-size:34px}
-.ketupat{width:60px}
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- KETUPAT KIRI -->
-<svg class="ketupat kiri" viewBox="0 0 100 100">
-<polygon points="50,5 95,50 50,95 5,50" fill="#1faa00"/>
-<line x1="50" y1="5" x2="50" y2="95" stroke="white" stroke-width="3"/>
-<line x1="5" y1="50" x2="95" y2="50" stroke="white" stroke-width="3"/>
-</svg>
-
-<!-- KETUPAT KANAN -->
-<svg class="ketupat kanan" viewBox="0 0 100 100">
-<polygon points="50,5 95,50 50,95 5,50" fill="#1faa00"/>
-<line x1="50" y1="5" x2="50" y2="95" stroke="white" stroke-width="3"/>
-<line x1="5" y1="50" x2="95" y2="50" stroke="white" stroke-width="3"/>
-</svg>
 
 <!-- HERO -->
 
@@ -278,20 +245,14 @@ animation:goyang 4s infinite;
 
 <h2>E-book Digital Imago</h2>
 
-<p>E-book berkualitas tinggi untuk membantu Anda mengembangkan bisnis.</p>
+<p>E-book berkualitas tinggi untuk membantu Anda mengembangkan bisnis</p>
+<p>dengan desain yang minimalis dan modren.</p>
 
-<div class="discount">Diskon Hari Raya Idul Fitri</div>
+<div class="discount"></div>
 
-<div class="countdown">
 
-<div class="time"><span id="d">0</span>Hari</div>
-<div class="time"><span id="h">0</span>Jam</div>
-<div class="time"><span id="m">0</span>Menit</div>
-<div class="time"><span id="s">0</span>Detik</div>
 
-</div>
-
-<button onclick="order('E-book Digital Imago (Diskon 10%)')">
+<button onclick="order('E-book Digital Imago')">
 Beli E-book Sekarang
 </button>
 
